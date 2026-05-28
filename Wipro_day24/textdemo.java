@@ -1,0 +1,33 @@
+package Wipro_day24;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class textdemo {
+
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demoqa.com/text-box");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("userName")).sendKeys("Paras");
+		Thread.sleep(2000);
+		driver.findElement(By.id("userEmail")).sendKeys("paras7373@gmail.com");
+		Thread.sleep(2000);
+		driver.findElement(By.id("currentAddress")).sendKeys("Himachal");
+		Thread.sleep(2000);
+		driver.findElement(By.id("permanentAddress")).sendKeys("Himachal");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("submit")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("userName")).clear();
+		driver.findElement(By.id("userEmail")).clear();
+		driver.findElement(By.id("currentAddress")).clear();
+		driver.findElement(By.id("permanentAddress")).clear();
+		
+		Thread.sleep(3000);
+		driver.quit();
+	}
+
+}
